@@ -4,7 +4,7 @@ from google.cloud import aiplatform as aip
 from google_cloud_pipeline_components import aiplatform as gcc_aip
 
 project_id = "example-vertex-ai-pipelines"
-pipeline_root_path = "gs://exp-vai"
+pipeline_root_path = "gs://exp-vai/ex1"
 
 # Define the workflow of the pipeline.
 
@@ -36,7 +36,6 @@ def pipeline(project_id: str):
         display_name="train-iris-automl-mbsdk-1",
         prediction_type="classification",
         model_type="CLOUD",
-        base_model=None,
         dataset=ds_op.outputs["dataset"],
         model_display_name="iris-classification-model-mbsdk",
         training_fraction_split=0.6,
@@ -69,7 +68,9 @@ job = aip.PipelineJob(
     pipeline_root=pipeline_root_path,
     parameter_values={
         'project_id': project_id
-    }
+    },
+    project="example-vertex-ai-pipelines"
 )
 
-job.submit()
+job.submit(
+    service_account="exp-vai@example-vertex-ai-pipelines.iam.gserviceaccount.com")

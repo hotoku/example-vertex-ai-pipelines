@@ -19,6 +19,12 @@ gcloud iam service-accounts add-iam-policy-binding \
 ```
 
 ```shell
+gcloud projects add-iam-policy-binding example-vertex-ai-pipelines \
+    --member="serviceAccount:exp-vai@example-vertex-ai-pipelines.iam.gserviceaccount.com" \
+    --role="roles/ml.serviceAgent"
+```
+
+```shell
 gsutil mb -p example-vertex-ai-pipelines -l asia-northeast1 gs://exp-vai
 ```
 
