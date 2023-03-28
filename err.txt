@@ -1,0 +1,22 @@
+/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/v2/compiler/compiler.py:1290: FutureWarning: APIs imported from the v1 namespace (e.g. kfp.dsl, kfp.components, etc) will not be supported by the v2 compiler since v2.0.0
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/hotoku/projects/hotoku/example-vertex-ai-pipelines/main.py", line 62, in <module>
+    compiler.Compiler().compile(pipeline_func=pipeline,
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/v2/compiler/compiler.py", line 1301, in compile
+    pipeline_job = self._create_pipeline_v2(
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/v2/compiler/compiler.py", line 1223, in _create_pipeline_v2
+    pipeline_func(*args_list)
+  File "/Users/hotoku/projects/hotoku/example-vertex-ai-pipelines/main.py", line 34, in pipeline
+    training_job_run_op = gcc_aip.AutoMLImageTrainingJobRunOp(
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/google_cloud_pipeline_components/aiplatform/automl_training_job/automl_image_training_job/component.yaml", line 2, in automl_image_training_job
+    description: |
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/components/_components.py", line 389, in create_task_object_from_component_and_pythonic_arguments
+    return _create_task_object_from_component_and_arguments(
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/components/_components.py", line 326, in _create_task_object_from_component_and_arguments
+    task = _container_task_constructor(
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/dsl/_component_bridge.py", line 319, in _create_container_op_from_component_and_arguments
+    _attach_v2_specs(task, component_spec, original_arguments)
+  File "/Users/hotoku/Library/Caches/pypoetry/virtualenvs/example-vertex-ai-pipelines-dpj1CLJa-py3.10/lib/python3.10/site-packages/kfp/dsl/_component_bridge.py", line 600, in _attach_v2_specs
+    raise NotImplementedError(
+NotImplementedError: Input argument supports only the following types: PipelineParam, str, int, float, bool, dict, and list. Got: "None".
